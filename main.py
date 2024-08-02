@@ -1,10 +1,8 @@
 import speech_recognition as sprc
 import os
-
 import json
 import vosk
 
-from voice_settings.VoiceAssistant import VoiceAssistant
 from handlers.dictionary import execute_command
 
 
@@ -45,11 +43,6 @@ if __name__ == "__main__":
     # инициализация инструментов распознавания и ввода речи
     recognizer = sprc.Recognizer()
     micro = sprc.Microphone(1)
-
-
-
-    # настройка данных голосового помощника
-    assistant = VoiceAssistant("Alice", "female", "ru")
 
     # for index, name in enumerate(sprc.Microphone.list_microphone_names()):
     #     print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))

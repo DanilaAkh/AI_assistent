@@ -6,6 +6,8 @@ import pyttsx3
 
 from owner.person import Person
 from assistant.speech import play_speech
+from voice_settings.VoiceAssistant import VoiceAssistant
+
 
 # Инициализация мастера ассистента
 person = Person("Данила", 23, "Екатеринбург")
@@ -13,6 +15,8 @@ person = Person("Данила", 23, "Екатеринбург")
 # Инструмент вывода голоса
 ttsEngine = pyttsx3.init()
 
+# настройка данных голосового помощника
+assistant = VoiceAssistant("Alice", "female", "ru")
 
 def execute_command(command_name: str, *args: list):
     """
