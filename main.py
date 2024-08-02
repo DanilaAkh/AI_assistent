@@ -1,29 +1,11 @@
 import speech_recognition as sprc
 import os
-import pyttsx3
+
 import json
 import vosk
+
 from voice_settings.VoiceAssistant import VoiceAssistant
-
-from commands.dictionary import commands
-import random
-import webbrowser
-
-
-
-
-def execute_command_with_name(command_name: str, *args: list):
-    """
-    Выполнение заданной пользователем команды с дополнительными аргументами
-    :param command_name: название команды
-    :param args: аргументы, которые будут переданы в функцию
-    :return:
-    """
-    for key in commands.keys():
-        if command_name in key:
-            commands[key](*args)
-        else:
-            pass  # print("Command not found")
+from commands_n.dictionary import execute_command
 
 
 def record_n_recognize(*args: tuple):
@@ -64,7 +46,7 @@ if __name__ == "__main__":
     recognizer = sprc.Recognizer()
     micro = sprc.Microphone(1)
 
-    ttsEngine = pyttsx3.init()
+
 
     # настройка данных голосового помощника
     assistant = VoiceAssistant("Alice", "female", "ru")
@@ -82,4 +64,4 @@ if __name__ == "__main__":
         command = voice_input[0]
 
         command_options = [str(input_part) for input_part in voice_input[1:len(voice_input)]]
-        execute_command_with_name(command, command_options)
+        execute_command(command, command_options)
