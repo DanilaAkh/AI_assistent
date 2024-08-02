@@ -5,7 +5,7 @@ import json
 import vosk
 
 from voice_settings.VoiceAssistant import VoiceAssistant
-from commands_n.dictionary import execute_command
+from handlers.dictionary import execute_command
 
 
 def record_n_recognize(*args: tuple):
