@@ -51,7 +51,7 @@ def play_farewell_and_quit(*args: tuple):
         f"До свидания, {person.name}! Хорошего Вам дня!",
         f"Всего доброго, {person.name}!"
     ]
-    play_speech(farewells[random.randint(0, len(farewells) - 1)])
+    play_speech(ttsEngine,farewells[random.randint(0, len(farewells) - 1)])
     ttsEngine.stop()
     quit()
 
@@ -89,7 +89,7 @@ def search_for_term_on_google(*args: tuple):
         return
 
     print(search_results)
-    play_speech(f"Вот что я нашел по запросу {search_term} в google")
+    play_speech(ttsEngine, f"Вот что я нашел по запросу {search_term} в google")
 
 
 def search_for_video_on_youtube(*args: tuple):
@@ -101,7 +101,7 @@ def search_for_video_on_youtube(*args: tuple):
     search_term = " ".join(args[0])
     url = "https://www.youtube.com/results?search_query=" + search_term
     webbrowser.get().open(url)
-    play_speech(f"Вот что я нашел по запросу {search_term} в youtube")
+    play_speech(ttsEngine, f"Вот что я нашел по запросу {search_term} в youtube")
 
 
 command = {
