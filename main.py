@@ -35,7 +35,6 @@ def record_n_recognize(*args: tuple):
         return recognize_data["text"]
 
 
-
 if __name__ == "__main__":
 
     vosk.SetLogLevel(-1)
