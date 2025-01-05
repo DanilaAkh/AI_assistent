@@ -8,7 +8,7 @@ from handlers.dictionary import execute_command
 
 def record_n_recognize(*args: tuple):
     """
-    Запись и распознование аудио
+    Запись и распознование аудио asd
     """
     with micro:
         recognize_data = ""
